@@ -4,15 +4,15 @@ import edu.smith.cs.csc262.coopsh.InputLine;
 import edu.smith.cs.csc262.coopsh.ShellEnvironment;
 import edu.smith.cs.csc262.coopsh.Task;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by mltaskova on 2/10/19.
  */
 public class Sort extends Task {
 
-    char[] tempArr;
-    StringBuilder sb = new StringBuilder();
+//    char[] tempArr;
+    List<String> list = new LinkedList<>();
 
     public Sort(ShellEnvironment env, String[] args) {
         super(env, args);
@@ -28,15 +28,21 @@ public class Sort extends Task {
 
         // only output and print when we've seen the whole file!
         if (line.isEndOfFile()) {
-            tempArr = sb.toString().toCharArray();
-            Arrays.sort(tempArr);
-            println(new String(tempArr));
+            Collections.sort(list, new Comparator<String>() {
+                @Override
+                public int compare(String o1, String o2) {
+                    return o1.compareTo(o2);
+                }
+            });
+            for (String l : list){
+                this.println(l);
+            }
             this.closeOutput();
             this.exit(0);
             return;
         }
 
         // Otherwise, increment this count!
-        sb.append(line.get());
+        list.add(line.get());
     }
 }
