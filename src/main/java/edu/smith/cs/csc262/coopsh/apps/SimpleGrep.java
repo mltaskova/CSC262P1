@@ -15,6 +15,9 @@ public class SimpleGrep extends Task {
 
     public SimpleGrep(ShellEnvironment env, String[] args) {
         super(env, args);
+        if (args.length != 1) {
+            System.err.println("grep only supports 1 argument!");
+        }
         p = Pattern.compile(args[0]);
     }
 

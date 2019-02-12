@@ -15,6 +15,9 @@ public class RegexGrep extends Task {
 
     public RegexGrep(ShellEnvironment env, String[] args) {
         super(env, args);
+        if (args.length != 1) {
+            System.err.println("rgrep only supports 1 argument!");
+        }
         p = Pattern.compile(args[0]);
     }
 

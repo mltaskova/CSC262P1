@@ -17,6 +17,9 @@ public class Tail extends Task {
 
     public Tail(ShellEnvironment env, String[] args) {
         super(env, args);
+        if (args.length != 1) {
+            System.err.println("tail only supports 1 argument!");
+        }
         numElt = Integer.parseInt(args[0]);
     }
 

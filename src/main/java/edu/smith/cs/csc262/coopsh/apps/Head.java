@@ -14,6 +14,9 @@ public class Head extends Task {
 
     public Head(ShellEnvironment env, String[] args) {
         super(env, args);
+        if (args.length != 1) {
+            System.err.println("head only supports 1 argument!");
+        }
         this.numElt = Integer.parseInt(args[0]);
     }
 

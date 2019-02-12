@@ -18,6 +18,9 @@ public class SetVar extends Task {
      */
     public SetVar(ShellEnvironment env, String[] args) {
         super(env, args);
+        if (args.length != 2) {
+            System.err.println("set only supports 2 arguments!");
+        }
         this.varName = args[0];
         this.varValue = args[1];
         env.variables.put(varName, varValue);

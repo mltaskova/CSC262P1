@@ -11,7 +11,6 @@ import java.util.*;
  */
 public class Sort extends Task {
 
-//    char[] tempArr;
     List<String> list = new LinkedList<>();
 
     public Sort(ShellEnvironment env, String[] args) {
