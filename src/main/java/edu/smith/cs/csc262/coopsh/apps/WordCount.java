@@ -24,13 +24,17 @@ public class WordCount extends Task {
 		// only output and print when we've seen the whole file!
 		if (line.isEndOfFile()) {
 			this.println(wordCount);
+			this.println(byteCount);
+			this.println(lineCount);
 			this.closeOutput();
 			this.exit(0);
 			return;
 		}
 		
 		// Otherwise, increment this count!
-		wordCount += line.get().split("\\s+").length;		
+		byteCount += line.get().length();
+		wordCount += line.get().split("\\s+").length;
+		lineCount ++;
 	}
 	
 }
