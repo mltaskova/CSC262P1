@@ -56,6 +56,8 @@ public class ShellEnvironment {
 	public Task makeProgram(String name, String[] args) {
 		switch (name) {
 		// Program: return a new Task object.
+		case "sort":
+			return new Sort(this, args);
 		case "tail":
 			return new Tail(this, args);
 		case "head":
