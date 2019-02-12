@@ -21,7 +21,9 @@ public class ListFiles extends Task {
     @Override
     protected void update() {
         if (workingDir.isDirectory()){
-            this.println(Arrays.toString(workingDir.list()));
+            for (String f : workingDir.list()) {
+                this.println(f);
+            }
         }
         this.closeOutput();
         this.exit(0);
