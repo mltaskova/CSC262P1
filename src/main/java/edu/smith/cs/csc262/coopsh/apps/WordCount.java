@@ -6,6 +6,8 @@ import edu.smith.cs.csc262.coopsh.Task;
 
 public class WordCount extends Task {
 	int wordCount = 0;
+	int byteCount = 0;
+	int lineCount = 0;
 
 	public WordCount(ShellEnvironment env, String[] args) {
 		super(env, args);

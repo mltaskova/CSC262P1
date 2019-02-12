@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /**
  * Cooperative Task abstract class. Each Task may send output to another
- * {@linkplain #outputTask} and it buffers input in {@linkplain input}.
+ * {@linkplain #outputTask} and it buffers input in {@linkplain #input}.
  * 
  * @author jfoley
  *

@@ -7,9 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import edu.smith.cs.csc262.coopsh.apps.Cat;
-import edu.smith.cs.csc262.coopsh.apps.Pwd;
-import edu.smith.cs.csc262.coopsh.apps.WordCount;
+import edu.smith.cs.csc262.coopsh.apps.*;
 import edu.smith.cs.csc262.coopsh.text.ShellParser;
 import edu.smith.cs.csc262.coopsh.text.Token;
 
@@ -58,6 +56,10 @@ public class ShellEnvironment {
 	public Task makeProgram(String name, String[] args) {
 		switch (name) {
 		// Program: return a new Task object.
+		case "ls":
+			return new ListFiles(this, args);
+		case "echo":
+			return new Echo(this, args);
 		case "cat":
 			return new Cat(this, args);
 		case "pwd":
