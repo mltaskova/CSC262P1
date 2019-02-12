@@ -7,6 +7,9 @@ import edu.smith.cs.csc262.coopsh.Task;
  * Created by mltaskova on 2/10/19.
  */
 public class SetVar extends Task {
+
+    String varName;
+    String varValue;
     /**
      * All tasks are created with a possibly empty list of string arguments!
      *
@@ -15,10 +18,14 @@ public class SetVar extends Task {
      */
     public SetVar(ShellEnvironment env, String[] args) {
         super(env, args);
+        this.varName = args[0];
+        this.varValue = args[1];
+        env.variables.put(varName, varValue);
     }
 
     @Override
     protected void update() {
-
+        this.closeOutput();
+        this.exit(0);
     }
 }
