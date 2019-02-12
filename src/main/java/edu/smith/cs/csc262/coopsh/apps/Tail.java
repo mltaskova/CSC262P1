@@ -39,11 +39,8 @@ public class Tail extends Task {
         }
 
         // Otherwise, increment this count!
-        if (elts.size() == numElt){
+        if (elts.size() == numElt)
             elts.poll();
-            elts.add(line.get());
-        }
-        else
-            elts.add(line.get());
+        elts.add(line.get());
     }
 }
